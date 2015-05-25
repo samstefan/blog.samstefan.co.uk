@@ -4,7 +4,7 @@ This repo contains the Ghost theme for my blog.
 
 ## Requirements
 
-- ghost
+- Ghost
 - gulp.js `^3.8.0`
 
 Install the build dependences:
