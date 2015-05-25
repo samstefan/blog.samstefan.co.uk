@@ -5,7 +5,7 @@ var app = {
   }
 
 , footer: function () {
-    var $backToBottom = $('.footer__back-to-top, .posts__drop-down__back-to-top')
+    var $backToBottom = $('.posts__drop-down__back-to-top')
     $backToBottom.click(function(event) {
       event.preventDefault()
       $('html, body').animate( {scrollTop:(0)}, 'slow')
