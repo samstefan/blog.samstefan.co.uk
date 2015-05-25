@@ -1,0 +1,49 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! Everything inside the #post tags pulls data from the post }}
+{{#post}}
+
+<nav class="posts__drop-down">
+  <a class="posts__drop-down__logo" href="http://blog.samstefan.co.uk"></a>
+  <a class="posts__drop-down__back-to-top" href="#">Back to top</a>
+  {{#prev_post}}<a class="posts__drop-down__previous-post" href="{{url}}">Next Post: {{title}} </a>{{/prev_post}}
+  {{#next_post}}<a class="posts__drop-down__next-post" href="{{url}}">Previous Post: {{title}}</a>{{/next_post}}
+</nav>
+
+<main class="content" role="main">
+  <div class="content-wrapper">
+    <article class="{{post_class}}">
+      <header class="post__header">
+        <h2 class="post__header__title">
+          <a class="post__header__title__link" href="{{url}}">{{{title}}}</a>
+        </h2>
+      </header>
+      <div class="post__content">
+        <div class="post__content__meta">
+          <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">Posted on the {{date format="Do MMMM YYYY"}}</time>
+          <span class="post__content__meta__break">—</span>
+        </div>
+        <section class="post__content__article">
+          <img class="post__content__article__image" src={{image}} />
+          {{content}}
+        </section>
+      </div>
+    </article>
+
+    <nav class="pagination" role="pagination">
+    {{#prev_post}}
+      <a class="pagination__older-posts" href="{{url}}">Next Post: &rarr;</a>
+    {{/prev_post}}
+
+    {{#next_post}}
+      <a class="pagination__newer-posts" href="{{url}}">&larr; Previous Post </a>
+    {{/next_post}}
+  </nav>
+  </div>
+</main>
+{{/post}}
+
+

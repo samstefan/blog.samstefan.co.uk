@@ -1,0 +1,15 @@
+{{!< default}}
+
+<div class="content-wrapper">
+	<main class="content">
+		<nav class="posts__drop-down" role="pagination">
+		  <a class="posts__drop-down__logo" href="http://blog.samstefan.co.uk"></a>
+		  <a class="posts__drop-down__back-to-top" href="#">Back to top</a>
+		</nav>
+
+	  {{> "loop"}}
+
+		{{! Previous/next page links - displayed on every page }}
+		{{pagination}}
+	</main>
+</div>

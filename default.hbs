@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {{! Document Settings }}
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  {{! Page Meta }}
+  <title>{{meta_title}}</title>
+  <meta name="description" content="{{meta_description}}" />
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+  {{! Styles'n'Scripts }}
+  <link rel="stylesheet" type="text/css" href="{{asset "main.css"}}" />
+
+  <script>
+    (function() {
+      var config = {
+        kitId: 'aph6vni'
+      }
+      var d = false
+      var tk = document.createElement('script')
+      tk.src = '//use.typekit.net/' + config.kitId + '.js'
+      tk.type = 'text/javascript'
+      tk.async = 'true'
+      tk.onload = tk.onreadystatechange = function() {
+        var rs = this.readyState
+        if (d || rs && rs != 'complete' && rs != 'loaded') return
+        d = true
+        try { Typekit.load(config); } catch (e) {}
+      }
+      var s = document.getElementsByTagName('script')[0]
+      s.parentNode.insertBefore(tk, s)
+    })()
+  </script>
+
+  {{! Ghost outputs important style and meta data with this tag }}
+  {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+
+  <header class="page-header">
+    <div class="content-wrapper">
+      <a class="page-header__logo" href="http://blog.samstefan.co.uk"><h1 class="page-header__title">A blog about web development and design</h1></a>
+
+      <nav class="page-header__navigation">
+        <a class="page-header__navigation__link" href="http://samstefan.co.uk">Home</a>
+        <a class="page-header__navigation__link page-header__navigation__link--active" href="http://blog.samstefan.co.uk">Blog</a>
+        <a class="page-header__navigation__link" href="http://blog.samstefan.co.uk/rss">Subscribe</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="site-wrapper">
+    {{! Everything else gets inserted here }}
+    {{{body}}}
+
+    <footer class="footer">
+      <div class="content-wrapper">
+        <div class="footer__copyright">Copyright © <script>document.write(new Date().getFullYear())</script>, Sam Stefan.
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  {{! Ghost outputs important scripts and data with this tag }}
+  {{ghost_foot}}
+
+  {{! The main JavaScript file for Casper }}
+  <script type="text/javascript" src="{{asset "main.js"}}"></script>
+
+</body>
+</html>

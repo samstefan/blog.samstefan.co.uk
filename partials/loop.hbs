@@ -1,0 +1,22 @@
+{{! Previous/next page links - only displayed on page 2+ }}
+
+{{! This is the post loop - each post will be output using this markup }}
+{{#foreach posts}}
+<article class="{{post_class}}">
+  <header class="post__header">
+    <h2 class="post__header__title">
+      <a class="post__header__title__link" href="{{url}}">{{{title}}}</a>
+    </h2>
+  </header>
+  <div class="post__content">
+    <div class="post__content__meta">
+      <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">Posted on the {{date format="Do MMMM YYYY"}}</time>
+      <span class="post__content__meta__break">—</span>
+    </div>
+    <section class="post__content__article">
+      <img class="post__content__article__image" src={{image}} />
+      {{content}}
+    </section>
+  </div>
+</article>
+{{/foreach}}

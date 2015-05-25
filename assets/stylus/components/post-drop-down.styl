@@ -1,0 +1,82 @@
+//==============================================================================
+
+// Title:
+// Post drop down Styling
+
+// Description:
+// Styling for the index page post drop down
+
+//==============================================================================
+
+.posts__drop-down
+  width 100%
+  position fixed
+  top 0
+  left 0
+  right 0
+  transform translateY(-56px)
+  transition transform 0.2s ease
+  background white
+  border-bottom 1px solid #d9d9d9
+
+.posts__drop-down--active
+  transform translateY(0)
+
+.posts__drop-down__back-to-top
+.posts__drop-down__next-post
+.posts__drop-down__previous-post
+  padding 20px
+  font-size 14px
+  font-weight 700
+  color $textColour
+  transition background 0.2s ease
+  &:hover
+    text-decoration none
+    background #FBFBFB
+
+.posts__drop-down__next-post
+.posts__drop-down__previous-post
+  width 300px
+  white-space nowrap
+  overflow hidden
+  text-overflow ellipsis
+
+.posts__drop-down__back-to-top
+.posts__drop-down__previous-post
+  float right
+  border-left 1px solid #d9d9d9
+
+.posts__drop-down__next-post
+  float left
+  border-right 1px solid #d9d9d9
+
+.posts__drop-down__logo
+  display block
+  float left
+  width 54px
+  height 54px
+  background url('./images/logo.png') no-repeat center
+  background-size 27px 30px
+  border-right 1px solid #d9d9d9
+  transition background 0.2s ease
+  &:hover
+    background #FBFBFB url('./images/logo.png') no-repeat center
+
+//------------------------------------------------------------------------------
+// Media queries
+//------------------------------------------------------------------------------
+
+@media $mediaRetina
+
+  .posts__drop-down__logo
+    background url('./images/logo@2x.png') no-repeat center
+    background-size 27px 30px
+    &:hover
+      background #FBFBFB url('./images/logo@2x.png') no-repeat center
+      background-size 27px 30px
+
+@media (max-width: 800px)
+
+  .posts__drop-down__next-post
+  .posts__drop-down__previous-post
+    display none

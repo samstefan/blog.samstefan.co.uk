@@ -1,0 +1,39 @@
+//==============================================================================
+
+// Title:
+// Pagination Styling
+
+// Description:
+// Styling for the index page pagination
+
+//==============================================================================
+
+.pagination
+  position relative
+  width 100%
+  float left
+  margin 70px 0 20px
+  font-size 20px
+  font-weight 700
+
+.pagination__page-number
+  width 100%
+  text-align center
+
+.pagination__newer-posts
+  position absolute
+  left 0
+  top 0
+  color $textColour
+
+.pagination__older-posts
+  position absolute
+  right 0
+  top 0
+  color $textColour
+
+@media (max-width: 400px)
+
+  .pagination
+    font-size 15px
+

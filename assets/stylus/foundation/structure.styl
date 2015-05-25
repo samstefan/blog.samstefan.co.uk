@@ -1,0 +1,62 @@
+//==============================================================================
+
+// Title:
+// Structure
+
+// Description:
+// Page structure styling.
+
+//==============================================================================
+
+*
+  box-sizing border-box
+
+html
+body
+  height 100%
+  color $textColour
+  font-size 100%
+  font-family $textFont
+  margin 0
+  background $backgroundColour
+  -webkit-text-size-adjust none
+
+img
+video
+  max-width 100%
+  height auto
+  width auto // ^ie8
+  vertical-align top
+
+::selection
+  background #fffbbb
+  color #000
+
+::-moz-selection
+  background #fffbbb
+  color #000
+
+.content-wrapper
+  max-width 960px
+  padding 0 20px
+  margin 0 auto
+  clearfix()
+
+.content
+  width 100%
+  float left
+  padding 100px 0
+
+//------------------------------------------------------------------------------
+// Media queries
+//------------------------------------------------------------------------------
+
+@media (max-width: 400px)
+
+  .content
+    padding 40px 0
+
+@media (min-width: 400px) and (max-width: 700px)
+
+  .content
+    padding 50px 0
