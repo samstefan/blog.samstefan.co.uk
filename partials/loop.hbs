@@ -14,8 +14,9 @@
       <span class="post__content__meta__break">—</span>
     </div>
     <section class="post__content__article">
-      <img class="post__content__article__image" src={{image}} />
-      {{content}}
+      {{#image}}
+        <img class="post__content__article__image" src={{image}} />
+      {{/image}}
     </section>
   </div>
 </article>
